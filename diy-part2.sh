@@ -29,7 +29,7 @@ sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/helloworld/l
 #curl -fsSL https://raw.githubusercontent.com/0118Add/Actions-Shangyou/main/n1_index.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_status/index.htm
 
 # 替换index.htm文件
-wget -O ./package/lean/autocore/files/arm/index.htm https://raw.githubusercontent.com/0118Add/Actions-Shangyou/main/n1_index.htm
+#wget -O ./package/lean/autocore/files/arm/index.htm https://raw.githubusercontent.com/0118Add/Actions-Shangyou/main/n1_index.htm
 
 # 替换banner
 wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/0118Add/Armbian/main/router/Openwrt_N1/diy/n1_lede/banner
@@ -74,6 +74,7 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata packa
 git clone https://github.com/kiddin9/openwrt-bypass.git package/bypass
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+git clone https://github.com/xiaorouji/openwrt-passwall2.git package/openwrt-passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
 #git clone https://github.com/leshanydy2022/luci-theme-bootstrap-mod.git package/luci-theme-bootstrap-mod
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
