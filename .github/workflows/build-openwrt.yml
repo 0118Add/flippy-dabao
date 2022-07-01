@@ -23,7 +23,7 @@ on:
     #- cron: 0 3 * * *
 
 env:
-  REPO_URL: https://github.com/coolsnowwolf/lede
+  REPO_URL: https://github.com/0118Add/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: ceshi.config
@@ -33,8 +33,8 @@ env:
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_Lede
-  PRODUCT_NAME: ARMv8_Lede
+  FILE_NAME: N1_Lede
+  PRODUCT_NAME: N1_Lede
 
 jobs:
   build:
