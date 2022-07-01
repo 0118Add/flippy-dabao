@@ -18,8 +18,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          #- flippy_name: k5.4
-            #release_name: openwrt_s905d_n1_k5.4.img
+          - flippy_name: k5.4
+            release_name: openwrt_s905d_n1_k5.4.img
           - flippy_name: k5.10
             release_name: openwrt_s905d_n1_k5.10.img
           - flippy_name: k5.15
@@ -110,13 +110,13 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 N1 HK1 x96max-Openwrt-img | 打包
+        name: ${{ env.DATE }} 🚀 N1 Openwrt-img | 打包
         allowUpdates: true
         tag: ${{ env.version }}
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          ## 以下为N1 HK1 x96max-Lean源码最新固件（有更新自动编译打包最新固件）
+          ## 以下为N1 源码最新固件
           默认IP：192.168.2.10 默认密码： password
            
  
