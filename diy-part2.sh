@@ -18,7 +18,7 @@ sed -i 's/192.168.1.1/192.168.2.10/g' package/base-files/files/bin/config_genera
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 git clone https://github.com/0118Add/pass-ssrp.git package/luci-app-ssr-plus
 #svn co https://github.com/0118Add/pass-ssrp/trunk/helloworld/luci-app-ssr-plus package/helloworld/luci-app-ssr-plus
-sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+#sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
@@ -73,8 +73,8 @@ svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata packa
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 git clone https://github.com/kiddin9/openwrt-bypass.git package/bypass
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
-git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
-git clone https://github.com/xiaorouji/openwrt-passwall2.git package/openwrt-passwall2
+#git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
+#git clone https://github.com/xiaorouji/openwrt-passwall2.git package/openwrt-passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
 #git clone https://github.com/leshanydy2022/luci-theme-bootstrap-mod.git package/luci-theme-bootstrap-mod
 git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
@@ -92,7 +92,7 @@ svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash pa
 git clone https://github.com/ophub/luci-app-amlogic.git package/luci-app-amlogic
 #svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
-sed -i 's/解除网易云音乐播放限制/解锁音乐限制/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
+#sed -i 's/解除网易云音乐播放限制/解锁音乐限制/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 #sed -i 's/Docker CE 容器/Docker 容器/g' feeds/luci/applications/luci-app-docker/po/zh-cn/docker.po
 sed -i 's/V2ray 服务器/V2ray 服务/g' feeds/luci/applications/luci-app-v2ray-server/po/zh-cn/v2ray_server.po
 #sed -i 's/Frp 内网穿透/Frp内网穿透/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
