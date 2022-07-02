@@ -16,8 +16,8 @@ sed -i 's/192.168.1.1/192.168.2.10/g' package/base-files/files/bin/config_genera
 #使用源码自带ShadowSocksR Plus+出国软件
 #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
-git clone https://github.com/0118Add/pass-ssrp.git package/luci-app-ssr-plus
-#svn co https://github.com/0118Add/pass-ssrp/trunk/helloworld/luci-app-ssr-plus package/helloworld/luci-app-ssr-plus
+git clone https://github.com/0118Add/helloworld.git package/helloworld
+#git clone https://github.com/0118Add/pass-ssrp.git package/luci-app-ssr-plus
 #sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 
 
