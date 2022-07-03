@@ -111,7 +111,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 N1 | 打包
+        name: ${{ env.DATE }} 🚀 N1-Immortalwrt | 打包
         allowUpdates: true
         tag: ${{ env.version }}
         commit: main
