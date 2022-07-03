@@ -1,4 +1,4 @@
-name: Build N1-Lean
+name: Build N1-Immortalwrt
 
 on:
   repository_dispatch:
