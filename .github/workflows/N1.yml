@@ -49,7 +49,8 @@ jobs:
         cd /opt
         #git clone https://github.com/unifreq/openwrt_packit        
         git clone https://github.com/0118Add/openwrt_packit
-        git clone https://github.com/breakings/OpenWrt
+        #git clone https://github.com/breakings/OpenWrt
+        git clone https://github.com/8688Add/OpenWrt
         cd -
         cp /opt/whoami /opt/openwrt_packit
     
