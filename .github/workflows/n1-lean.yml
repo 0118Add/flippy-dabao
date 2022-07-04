@@ -1,4 +1,4 @@
-name: Build N1-Lean
+name: build n1-lean
 
 on:
   repository_dispatch:
@@ -9,6 +9,8 @@ env:
   UPLOAD_COWTRANSFER: false
   RELEASE: true
   TZ: Asia/Shanghai
+  FILE_NAME: N1_Lede
+  PRODUCT_NAME: N1_Lede
 
 jobs:
   build:
@@ -111,13 +113,13 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 N1-Lean | 打包
+        name: ${{ env.DATE }} 🚀 n1-lean | 打包
         allowUpdates: true
         tag: ${{ env.version }}
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          ## 以下为N1-Lean 源码最新固件
+          ## 以下为n1-lean 源码最新固件
           默认IP：192.168.2.10 默认密码： password
            
  
