@@ -86,6 +86,10 @@ git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-ap
 git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash package/luci-app-openclash
+# 编译 po2lmo (如果有po2lmo可跳过)
+pushd package/luci-app-openclash/tools/po2lmo
+make && sudo make install
+popd
 #rm -rf package/lean/luci-app-frpc
 #git clone https://github.com/8688Add/luci-app-frpc-mod.git package/lean/luci-app-frpc
 #chmod 0755 package/lean/luci-app-frpc/root/etc/init.d/frp
