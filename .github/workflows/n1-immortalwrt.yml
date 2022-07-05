@@ -1,4 +1,4 @@
-name: build n1-immortalwrt
+name: dabao n1-immortalwrt
 
 on:
   repository_dispatch:
