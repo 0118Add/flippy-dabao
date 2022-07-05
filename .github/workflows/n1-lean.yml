@@ -1,4 +1,4 @@
-name: build n1-lean
+name: dabao n1-lean
 
 on:
   repository_dispatch:
