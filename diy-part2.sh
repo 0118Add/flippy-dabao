@@ -46,8 +46,8 @@ rm -rf feeds/luci/collections/luci-lib-docker
 rm -rf feeds/luci/applications/luci-app-dockerman
 #rm -rf feeds/luci/applications/luci-app-netdata
 rm -rf feeds/luci/applications/luci-app-aliyundrive-webdav
-rm -rf /feeds/packages/multimedia/aliyundrive-webdav
-rm -rf /feeds/packages/net/samba4
+rm -rf feeds/packages/multimedia/aliyundrive-webdav
+rm -rf feeds/packages/net/samba4
 svn co https://github.com/sirpdboy/diy/trunk/samba4 feeds/packages/net/samba4
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
