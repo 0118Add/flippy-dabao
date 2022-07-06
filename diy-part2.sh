@@ -106,9 +106,9 @@ sed -i 's/V2ray 服务器/V2ray 服务/g' feeds/luci/applications/luci-app-v2ray
 #sed -i 's/Frp 内网穿透/Frp内网穿透/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 
 #luci-app-amlogic 晶晨宝盒
-sed -i 's|https.*/amlogic-s9xxx-openwrt|https://github.com/0118Add/flippy-s905d|g' package/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's|http.*/library|https://github.com/breakings/OpenWrt/opt/kernel|g' package/amlogic/luci-app-amlogic/root/etc/config/amlogic
-sed -i 's|s9xxx_lede|ARMv8|g' package/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/flippy-s905d|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|opt/kernel|https://github.com/breakings/OpenWrt/opt/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
+sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 
 # TIME b "调整 Dockerman 到 服务 菜单"
 #sed -i 's/"admin",/"admin","services",/g' package/luci-app-dockerman/applications/luci-app-dockerman/luasrc/controller/*.lua
