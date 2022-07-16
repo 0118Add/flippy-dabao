@@ -111,7 +111,7 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 n1-lean | 打包
+        name: ${{ env.DATE }} 🚀 n1-kvm | 打包
         allowUpdates: true
         tag: ${{ env.version }}
         commit: main
