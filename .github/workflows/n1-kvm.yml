@@ -69,7 +69,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -qq install xz-utils btrfs-progs gawk zip unzip curl dosfstools  uuid-runtime
+        sudo -E apt-get -qq install xz-utils btrfs-progs gawk zip unzip curl dosfstools  uuid-runtime qemu-utils
         sudo -E apt-get -qq install git  git-core
         sudo -E apt-get -qq install pigz
         sudo -E apt-get -qq autoremove --purge
