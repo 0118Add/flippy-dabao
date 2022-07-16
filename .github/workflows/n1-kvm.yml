@@ -1,4 +1,4 @@
-name: dabao n1-lean
+name: dabao n1-kvm
 
 on:
   repository_dispatch:
@@ -9,8 +9,8 @@ env:
   UPLOAD_COWTRANSFER: false
   RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: n1-lean
-  PRODUCT_NAME: n1-lean
+  FILE_NAME: n1-kvm
+  PRODUCT_NAME: n1-kvm
 
 jobs:
   build:
@@ -20,14 +20,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - flippy_name: k5.4
-            release_name: openwrt_s905d_n1_k5.4.img
-          - flippy_name: k5.10
-            release_name: openwrt_s905d_n1_k5.10.img
+          #- flippy_name: k5.4
+            #release_name: openwrt_s905d_n1_k5.4.img
+          #- flippy_name: k5.10
+            #release_name: openwrt_s905d_n1_k5.10.img
           - flippy_name: k5.15
             release_name: openwrt_s905d_n1_k5.15.img
-          #- flippy_name: k5.17
-            #release_name: openwrt_s905d_n1_k5.17.img    
           - flippy_name: k5.18
             release_name: openwrt_s905d_n1_k5.18.img    
     
@@ -84,7 +82,7 @@ jobs:
         sudo mount -t tmpfs  none  /opt/openwrt_packit/tmp
         cd /opt/openwrt_packit
         #sudo chmod +x *.sh
-        sudo ./mk_s905d_n1.sh
+        sudo ./mk_qemu-aarch64_img.sh
         
     - name: copy update files
       run: |
