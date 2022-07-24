@@ -1,7 +1,5 @@
 name: dabao n1-kvm
 
-name: Build lede
-
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -107,14 +105,11 @@ jobs:
       with:
         retain_days: 1
         keep_minimum_runs: 3
-
+        
     - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@v0.2.0
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
+      uses: dev-drprasad/delete-older-releases@v0.1.0
       with:
-        repo:
-        keep_latest: 7
-        delete_tag_pattern:
+        keep_latest: 3
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
