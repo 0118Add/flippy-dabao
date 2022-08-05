@@ -174,9 +174,6 @@ sed -i 's/services/vpn/g' feeds/luci/applications/luci-app-v2ray-server/luasrc/v
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=6c3cca4bbeb5d9b2f5e3c0c401c9d27bc8a5d2a0db8a2f6a06efd03ad3c38a33/g' feeds/packages/utils/runc/Makefile
 #sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=52b36a2dd837e8462de8e01458bf02cf9eea47dd/g' feeds/packages/utils/runc/Makefile
 
-#赋予koolddns权限
-#chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
-#chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
 
 # fix kernel modules missing nfs_ssc.ko
 #cp -f $GITHUB_WORKSPACE/general/fs.mk package/kernel/linux/modules
