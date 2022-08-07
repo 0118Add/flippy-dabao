@@ -9,8 +9,8 @@ env:
   UPLOAD_COWTRANSFER: false
   RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: n1-lean
-  PRODUCT_NAME: n1-lean
+  FILE_NAME: r68s-lean
+  PRODUCT_NAME: r68s-lean
 
 jobs:
   build:
@@ -41,10 +41,10 @@ jobs:
         sudo chmod  -R 777 /opt
         cp -r ${FLIPPY_NAME}/opt/* /opt
         cd /opt
-        #git clone https://github.com/unifreq/openwrt_packit        
-        git clone https://github.com/0118Add/openwrt_packit
-        #git clone https://github.com/breakings/OpenWrt
-        git clone https://github.com/8688Add/OpenWrt
+        git clone https://github.com/unifreq/openwrt_packit        
+        #git clone https://github.com/0118Add/openwrt_packit
+        git clone https://github.com/breakings/OpenWrt
+        #git clone https://github.com/8688Add/OpenWrt
         cd -
         cp /opt/whoami /opt/openwrt_packit
     
