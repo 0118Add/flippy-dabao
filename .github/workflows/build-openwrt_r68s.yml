@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: build openwrt
+name: build openwrt_r68s
 
 on:
   repository_dispatch:
@@ -26,15 +26,15 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: flippy.config
+  CONFIG_FILE: r68s.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_N1
-  PRODUCT_NAME: ARMv8_N1
+  FILE_NAME: R68s
+  PRODUCT_NAME: R68s
 
 jobs:
   build:
