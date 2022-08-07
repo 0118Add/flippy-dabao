@@ -1,6 +1,6 @@
 WHOAMI="BGG"
-KERNEL="5.4.200"
-VERSION="74+o"
+KERNEL="5.4.209"
+VERSION="75+o"
 KERNEL_VERSION="$KERNEL-flippy-$VERSION"
 KERNEL_PKG_HOME="/opt/OpenWrt/opt/kernel/$KERNEL"
 #KERNEL_PKG_HOME="/opt/kernel/pub/stable/$KERNEL"
