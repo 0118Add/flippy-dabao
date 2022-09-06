@@ -1,4 +1,4 @@
-name: dabao n1-immortalwrt
+name: dabao rock5b
 
 on:
   repository_dispatch:
@@ -9,8 +9,8 @@ env:
   UPLOAD_COWTRANSFER: false
   RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: n1-immortalwrt
-  PRODUCT_NAME: n1-immortalwrt
+  FILE_NAME: rock5b
+  PRODUCT_NAME: rock5b
 
 jobs:
   build:
@@ -20,16 +20,16 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - flippy_name: k5.4
-            release_name: openwrt_s905d_n1_k5.4.img
+          #- flippy_name: k5.4
+            #release_name: openwrt_s905d_n1_k5.4.img
           - flippy_name: k5.10
             release_name: openwrt_s905d_n1_k5.10.img
-          - flippy_name: k5.15
-            release_name: openwrt_s905d_n1_k5.15.img
-          - flippy_name: k5.19
-            release_name: openwrt_s905d_n1_k5.19.img    
-          - flippy_name: k5.18
-            release_name: openwrt_s905d_n1_k5.18.img    
+          #- flippy_name: k5.15
+            #release_name: openwrt_s905d_n1_k5.15.img
+          #- flippy_name: k5.19
+            #release_name: openwrt_s905d_n1_k5.19.img    
+          #- flippy_name: k5.18
+            #release_name: openwrt_s905d_n1_k5.18.img    
     
     env:
       FLIPPY_NAME: ${{ matrix.flippy_name }}   
@@ -60,7 +60,7 @@ jobs:
       run: |
         cd /opt/openwrt_packit
         
-        wget  https://github.com/0118Add/Openwrt-phicomm-n1/releases/download/ARMv8_immortalwrt_18.06/openwrt-armvirt-64-default-rootfs.tar.gz
+        wget  https://github.com/0118Add/flippy-s905d_r68s/releases/download/ARMv8_lede/openwrt-armvirt-64-default-rootfs.tar.gz
                 
     - name: Check Files
       run: |
@@ -84,7 +84,7 @@ jobs:
         sudo mount -t tmpfs  none  /opt/openwrt_packit/tmp
         cd /opt/openwrt_packit
         #sudo chmod +x *.sh
-        sudo ./mk_s905d_n1.sh
+        sudo ./mk_rk3588_rock5b.sh
         
     - name: copy update files
       run: |
@@ -113,13 +113,13 @@ jobs:
       id: release
       uses: ncipollo/release-action@v1
       with:
-        name: ${{ env.DATE }} 🚀 n1-immortalwrt | 打包
+        name: ${{ env.DATE }} 🚀 rk3588_rock5b | 打包
         allowUpdates: true
         tag: ${{ env.version }}
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          ## 以下为n1-immortalwrt 源码最新固件
+          ## 以下为rk3588_rock5b 源码最新固件
           默认IP：192.168.2.10 默认密码： password
            
  
