@@ -52,7 +52,7 @@ jobs:
       run: |
         cd /opt/openwrt_packit
         
-        wget  https://github.com/0118Add/flippy-s905d_r68s/releases/download/ARMv8_N1/openwrt-armvirt-64-default-rootfs.tar.gz
+        wget  https://github.com/0118Add/flippy-rock5b-r68s/releases/download/ARMv8_N1/openwrt-armvirt-64-default-rootfs.tar.gz
                 
     - name: Check Files
       run: |
