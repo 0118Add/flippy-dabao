@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: build openwrt s905d_r68s
+name: build openwrt
 
 on:
   repository_dispatch:
