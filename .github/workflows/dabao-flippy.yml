@@ -68,7 +68,7 @@ jobs:
         OPENWRT_ARMVIRT: https://github.com/0118Add/s9xxx-actions/releases/download/ARMv8_Lede/openwrt-armvirt-64-default-rootfs.tar.gz
         PACKAGE_SOC: qemu_r66s_r68s_s905x3_s905d_vplus_beikeyun
         WHOAMI: BGG
-        OPENWRT_VER: "R22.10.1"
+        #OPENWRT_VER: "R22.10.10"
         #BUILD: $(date '+%Y-%m-%d')
         #DISTRIB_REVISION: "${OPENWRT_VER} (${BUILD} by ${WHOAMI})"
         #DISTRIB_DESCRIPTION: ""
