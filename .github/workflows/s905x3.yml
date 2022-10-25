@@ -1,4 +1,4 @@
-name: Build s905x3
+name: dabao s905x3
 on:
   repository_dispatch:
   workflow_dispatch:
