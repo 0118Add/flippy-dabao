@@ -52,14 +52,15 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-bypass package
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 svn co https://github.com/kiddin9/openwrt-packages/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
-git clone https://github.com/sbwml/luci-app-alist.git package/alist
-svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-app-openclash package/luci-app-openclash
+svn co https://github.com/0118Add/openwrt-packages/trunk/alist package/alist
+svn co https://github.com/0118Add/openwrt_packages/trunk/luci-app-alist package/luci-app-alist
+svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash package/luci-app-openclash
 
 
 # 修改插件名字
 sed -i 's/Frp 内网穿透/内网穿透/g' package/luci-app-frpc/po/zh-cn/frp.po
 sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
-sed -i 's/Alist 文件列表/网络云盘/g' package/alist/luci-app-alist/po/zh-cn/alist.po
+sed -i 's/Alist 文件列表/网络云盘/g' package/luci-app-alist/po/zh-cn/alist.po
 sed -i 's/"阿里云盘 WebDAV"/"阿里云盘"/g' package/aliyundrive-webdav/openwrt/luci-app-aliyundrive-webdav/po/zh-cn/aliyundrive-webdav.po
 sed -i 's/解除网易云音乐播放限制/音乐解锁/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 
