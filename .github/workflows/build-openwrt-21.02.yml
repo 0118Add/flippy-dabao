@@ -22,15 +22,15 @@ on:
 env:
   REPO_URL: https://github.com/0118Add/immortalwrt
   REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: aarch64/feeds.conf.default
-  CONFIG_FILE: Immortalwrt.config
+  FEEDS_CONF: 21.02.feeds.conf.default
+  CONFIG_FILE: 21.02.config
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: diy-part4.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_immortalwrt_21.02
-  PRODUCT_NAME: ARMv8_immortalwrt_21.02
+  FILE_NAME: ARMv8_21.02
+  PRODUCT_NAME: ARMv8_21.02
 
 jobs:
   build:
