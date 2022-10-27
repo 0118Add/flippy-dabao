@@ -13,7 +13,7 @@
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
-#使用源码自带ShadowSocksR Plus+出国软件
+# 使用源码自带ShadowSocksR Plus+出国软件
 #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
 #sed -i '$a src-git helloworld https://github.com/fw876/helloworld' feeds.conf.default
 git clone https://github.com/fw876/helloworld.git package/helloworld
@@ -77,7 +77,7 @@ sed -i 's/解除网易云音乐播放限制/解除网易音乐播放限制/g' pa
 #sed -i 's/WireGuard 状态/WiGd状态/g' feeds/luci/applications/luci-app-wireguard/po/zh-cn/wireguard.po
 #sed -i 's/Turbo ACC 网络加速/网络加速/g' feeds/luci/applications/luci-app-turboacc/po/zh-cn/turboacc.po
 
-#luci-app-amlogic 晶晨宝盒
+# luci-app-amlogic 晶晨宝盒
 sed -i "s|https.*/s9xxx-openwrt|https://github.com/0118Add/flippy-dabao|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|opt/kernel|https://github.com/breakings/OpenWrt/opt/kernel|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
 sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/amlogic
@@ -128,29 +128,9 @@ sed -i "s|ARMv8|s9xxx_lede|g" package/amlogic/luci-app-amlogic/root/etc/config/a
 #sed -i 's/services/vpn/g' package/luci-app-openclash/luasrc/model/cbi/openclash/*.lua
 #sed -i 's/services/vpn/g' package/luci-app-openclash/luasrc/view/openclash/*.htm
 
-# Add autocore support for armvirt
-#sed -i 's/TARGET_rockchip/TARGET_rockchip\|\|TARGET_armvirt/g' package/lean/autocore/Makefile
-
-# sagernet-core
-#sed -i 's|$(LN) v2ray $(1)/usr/bin/xray|#$(LN) v2ray $(1)/usr/bin/xray|g' package/sagernet-core/Makefile
-#sed -i 's|CONFLICTS:=v2ray-core xray-core|#CONFLICTS:=v2ray-core xray-core|g' package/sagernet-core/Makefile
-
-# containerd
-#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.5.11/g' feeds/packages/utils/containerd/Makefile
-#sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
-#sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=3df54a852345ae127d1fa3092b95168e4a88e2f8/g' feeds/packages/utils/containerd/Makefile
-#cp -f $GITHUB_WORKSPACE/general/containerd/Makefile feeds/packages/utils/containerd
-
-# runc
-#sed -i 's/PKG_VERSION:=.*/PKG_VERSION:=1.0.2/g' feeds/packages/utils/runc/Makefile
-#sed -i 's/PKG_HASH:=.*/PKG_HASH:=6c3cca4bbeb5d9b2f5e3c0c401c9d27bc8a5d2a0db8a2f6a06efd03ad3c38a33/g' feeds/packages/utils/runc/Makefile
-#sed -i 's/PKG_SOURCE_VERSION:=.*/PKG_SOURCE_VERSION:=52b36a2dd837e8462de8e01458bf02cf9eea47dd/g' feeds/packages/utils/runc/Makefile
-
-#赋予koolddns权限
+# 赋予koolddns权限
 #chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
 #chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
-
-#rm -f package/kernel/mac80211/patches/brcm/999-backport-to-linux-5.18.patch
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
