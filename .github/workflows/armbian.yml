@@ -22,8 +22,8 @@ env:
   UPLOAD_RELEASE: true
   RECENT_LASTEST: 3
   TZ: Asia/Shanghai
-  FILE_NAME: dabao_flippy
-  PRODUCT_NAME: dabao_flippy
+  FILE_NAME: armbian
+  PRODUCT_NAME: armbian
 
 jobs:
   build:
@@ -64,8 +64,9 @@ jobs:
       uses: ophub/amlogic-s9xxx-armbian@main
       with:
         build_target: armbian
-        armbian_path: build/output/images/*.img
+        armbian_path: https://dl.armbian.com/*/Armbian_*.img.xz
         armbian_soc: s905d_s905x3
+        auto_kernel: false
         armbian_kernel: 6.0.6_5.15.77
  
     - name: Upload artifact to Actions
