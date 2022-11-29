@@ -35,9 +35,10 @@ wget -O ./package/base-files/files/etc/banner https://raw.githubusercontent.com/
 
 # 添加旁路由防火墙
 echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/config/firewall/files/firewall.user
+#echo "iptables -t nat -I POSTROUTING -j FULLCONENAT" >> package/network/config/firewall/files/firewall.user
 
 
-#添加额外软件包
+# 添加额外软件包
 rm -rf feeds/luci/collections/luci-lib-docker
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/lang/golang
