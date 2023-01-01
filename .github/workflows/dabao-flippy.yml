@@ -66,7 +66,7 @@ jobs:
       env:
         SCRIPT_REPO_URL: unifreq/openwrt_packit
         OPENWRT_ARMVIRT: https://github.com/0118Add/flippy-dabao/releases/download/ARMv8/openwrt-armvirt-64-default-rootfs.tar.gz
-        PACKAGE_SOC: qemu_r66s_r68s_s905x3_s905d_h68k_h88k_rock5b
+        PACKAGE_SOC: qemu_r66s_r68s_s905x3_s905d_rock5b
         WHOAMI: BGG
         #OPENWRT_VER: "R22.10.10"
         #BUILD: $(date '+%Y-%m-%d')
