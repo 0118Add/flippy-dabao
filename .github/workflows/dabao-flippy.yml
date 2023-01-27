@@ -79,8 +79,8 @@ jobs:
         #SW_FLOWOFFLOAD: 1
         #HW_FLOWOFFLOAD: 0
         #SFE_FLOW: 1
-        #ENABLE_WIFI_K504: 1
-        #ENABLE_WIFI_K510: 1
+        ENABLE_WIFI_K504: 0
+        ENABLE_WIFI_K510: 0
         GZIP_IMGS: .gz
          
     - name: Upload artifact to Actions
