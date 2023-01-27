@@ -74,7 +74,7 @@ jobs:
         #DISTRIB_DESCRIPTION: ""
         KERNEL_REPO_URL: https://github.com/breakings/OpenWrt/tree/main/opt
         #KERNEL_REPO_URL: https://github.com/ophub/kernel/tree/main/pub/dev
-        KERNEL_VERSION_NAME: 5.15.25_6.1.1_5.10.110
+        KERNEL_VERSION_NAME: 5.15.25_6.1.1_5.10.110_5.4.210
         KERNEL_AUTO_LATEST: true
         #SW_FLOWOFFLOAD: 1
         #HW_FLOWOFFLOAD: 0
