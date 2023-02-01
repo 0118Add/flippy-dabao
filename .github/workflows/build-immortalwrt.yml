@@ -163,7 +163,7 @@ jobs:
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          ARMv8系列设备immortalwrt打包用临时固件，不可直刷
+          ARMv8系列设备immortalwrt源码打包用临时固件，不可直刷
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
