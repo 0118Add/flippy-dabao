@@ -1,4 +1,4 @@
-name: dabao s905d
+name: dabao s905d-lean
 on:
   repository_dispatch:
   workflow_dispatch:
