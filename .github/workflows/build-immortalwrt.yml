@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: build openwrt-21.02
+name: build immortalwrt
 
 on:
   repository_dispatch:
@@ -21,16 +21,16 @@ on:
 
 env:
   REPO_URL: https://github.com/0118Add/immortalwrt
-  REPO_BRANCH: openwrt-21.02
-  FEEDS_CONF: 21.02.feeds.conf.default
-  CONFIG_FILE: 21.02.config
+  REPO_BRANCH: openwrt-18.06-k5.4
+  FEEDS_CONF: x86/diy/x86_lede/18.06-k5.4.feeds.conf.default
+  CONFIG_FILE: immortalwrt.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part4.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   TZ: Asia/Shanghai
-  FILE_NAME: ARMv8_21.02
-  PRODUCT_NAME: ARMv8_21.02
+  FILE_NAME: ARMv8_immortalwrt
+  PRODUCT_NAME: ARMv8_immortalwrt
 
 jobs:
   build:
@@ -163,7 +163,7 @@ jobs:
         commit: main
         token: ${{ secrets.RELEASES_TOKEN }}
         body: |
-          ARMv8系列设备immortalwrt-21.02分支打包用临时固件，不可直刷
+          ARMv8系列设备immortalwrt打包用临时固件，不可直刷
           当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt)更新记录】
           ${{ env.useVersionInfo }}
         artifacts: ${{ env.FIRMWARE }}/*
