@@ -1,4 +1,4 @@
-name: dabao n1-immortalwrt
+name: dabao s905d-immortalwrt
 on:
   repository_dispatch:
   workflow_dispatch:
