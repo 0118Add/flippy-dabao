@@ -1,4 +1,4 @@
-name: dabao s905x3-21.02
+name: dabao s905x3-immortalwrt
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -45,7 +45,7 @@ jobs:
     - name: Download
       run: |
         cd /opt/openwrt_packit
-        wget  https://github.com/0118Add/flippy-dabao/releases/download/ARMv8_21.02/openwrt-armvirt-64-default-rootfs.tar.gz
+        wget  https://github.com/0118Add/flippy-dabao/releases/download/ARMv8_immortalwrt/openwrt-armvirt-64-default-rootfs.tar.gz
         
     - name: Check Files
       run: |
