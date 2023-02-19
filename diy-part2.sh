@@ -49,7 +49,7 @@ svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/pac
 #rm -rf feeds/packages/multimedia/aliyundrive-webdav
 #rm -rf /feeds/packages/net/samba4
 
-git clone https://github.com/0118Add/actions-armbian.git package/myautocore
+git clone https://github.com/0118Add/build-actions.git package/myautocore
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata package/luci-app-netdata
