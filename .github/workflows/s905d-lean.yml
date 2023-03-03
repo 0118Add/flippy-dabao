@@ -115,7 +115,7 @@ jobs:
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          This is OpenWrt firmware for n1
+          This is OpenWrt firmware for n1-lean
           * Firmware information
           Default IP地址: 192.168.2.1
           Default username: root
