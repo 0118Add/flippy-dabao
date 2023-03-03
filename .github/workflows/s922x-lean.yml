@@ -1,4 +1,4 @@
-name: dabao s905d-lean
+name: dabao s922x-lean
 on:
   repository_dispatch:
   workflow_dispatch:
@@ -8,7 +8,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
-  FILE_NAME: openwrt_s905d-lean&flippy
+  FILE_NAME: openwrt_s922x-lean&flippy
 
 jobs:
   build:
@@ -68,7 +68,7 @@ jobs:
         sudo mount -t tmpfs  none  /opt/openwrt_packit/tmp
         cd /opt/openwrt_packit
         #sudo chmod +x *.sh
-        sudo ./mk_s905d_n1.sh
+        sudo ./mk_s922x_gtking.sh
         sudo cp files/openwrt-update-amlogic output/openwrt-update-amlogic
         
     - name: pigz -9
@@ -115,7 +115,7 @@ jobs:
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          This is OpenWrt firmware for n1
+          This is OpenWrt firmware for s922x-lean
           * Firmware information
           Default IP地址: 192.168.2.1
           Default username: root
