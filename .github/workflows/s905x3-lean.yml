@@ -115,7 +115,7 @@ jobs:
         commit: main
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
-          This is OpenWrt firmware for s905x3
+          This is OpenWrt firmware for s905x3-lean
           * Firmware information
           Default IP地址: 192.168.2.1
           Default username: root
