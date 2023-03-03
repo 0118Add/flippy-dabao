@@ -62,9 +62,9 @@ jobs:
     
     - name: Package Armvirt as OpenWrt
       if: (!cancelled())
-      uses: ophub/flippy-openwrt-actions@main
+      uses: 0118Add/flippy-openwrt-actions@main
       env:
-        SCRIPT_REPO_URL: unifreq/openwrt_packit
+        SCRIPT_REPO_URL: 0118Add/openwrt_packit
         OPENWRT_ARMVIRT: https://github.com/0118Add/flippy-dabao/releases/download/ARMv8/openwrt-armvirt-64-default-rootfs.tar.gz
         PACKAGE_SOC: beikeyun_vplus_r66s_r68s_s905x3_s905d_rock5b
         WHOAMI: BGG
