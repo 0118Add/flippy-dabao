@@ -25,7 +25,7 @@ git clone https://github.com/fw876/helloworld.git package/helloworld
 sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' target/linux/armvirt/Makefile
 
 # 修改系统文件
-#curl -fsSL https://raw.githubusercontent.com/0118Add/patch/main/flippyn1_index.htm > ./package/lean/autocore/files/arm/index.htm
+curl -fsSL https://raw.githubusercontent.com/0118Add/patch/main/flippyn1_index.htm > ./package/lean/autocore/files/arm/index.htm
 
 # 修改autocore
 sed -i 's/DEPENDS:=@(.*/DEPENDS:=@(TARGET_bcm27xx||TARGET_bcm53xx||TARGET_ipq40xx||TARGET_ipq806x||TARGET_ipq807x||TARGET_mvebu||TARGET_rockchip||TARGET_armvirt) \\/g' package/lean/autocore/Makefile
@@ -42,7 +42,7 @@ echo "iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE" >> package/network/c
 
 
 # 添加额外软件包
-rm -rf package/lean/autocore
+#rm -rf package/lean/autocore
 rm -rf feeds/luci/collections/luci-lib-docker
 rm -rf feeds/luci/applications/luci-app-dockerman
 #rm -rf feeds/packages/lang/golang
@@ -52,7 +52,7 @@ rm -rf feeds/luci/applications/luci-app-dockerman
 #rm -rf feeds/packages/multimedia/aliyundrive-webdav
 #rm -rf /feeds/packages/net/samba4
 
-git clone https://github.com/0118Add/build-actions.git package/myautocore
+#git clone https://github.com/0118Add/build-actions.git package/myautocore
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata package/luci-app-netdata
