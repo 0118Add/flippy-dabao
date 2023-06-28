@@ -165,9 +165,8 @@ sed -i 's/services/vpn/g' package/luci-app-openclash/luasrc/*.lua
 sed -i 's/services/vpn/g' package/luci-app-openclash/luasrc/model/cbi/openclash/*.lua
 sed -i 's/services/vpn/g' package/luci-app-openclash/luasrc/view/openclash/*.htm
 
-# 赋予koolddns权限
-#chmod 0755 package/luci-app-koolddns/root/etc/init.d/koolddns
-#chmod 0755 package/luci-app-koolddns/root/usr/share/koolddns/aliddns
+# 赋予权限
+chmod 0755 package/luci-app-bypass/root/etc/init.d/bypass
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
