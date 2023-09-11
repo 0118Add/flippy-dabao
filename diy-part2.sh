@@ -56,7 +56,7 @@ git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dock
 #svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata package/luci-app-netdata
 svn co https://github.com/kiddin9/openwrt-packages/trunk/lua-maxminddb package/lua-maxminddb
 svn co https://github.com/0118Add/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
-git clone https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
+git clone -b packages https://github.com/xiaorouji/openwrt-passwall.git package/openwrt-passwall
 git clone -b luci https://github.com/xiaorouji/openwrt-passwall.git package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
