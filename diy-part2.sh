@@ -14,7 +14,7 @@
 sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
 
 #使用源码自带ShadowSocksR Plus+出国软件
-git clone https://github.com/fw876/helloworld.git package/helloworld
+#git clone https://github.com/fw876/helloworld.git package/helloworld
 
 # 设置密码为空（安装固件时无需密码登陆，然后自己修改想要的密码）
 #sed -i 's@.*CYXluq4wUazHjmCDBCqXF*@#&@g' package/lean/default-settings/files/zzz-default-settings
@@ -58,9 +58,12 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/lua-maxminddb package/l
 svn co https://github.com/0118Add/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
-git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
+svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
+svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
+svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
+#git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
-git clone https://github.com/sbwml/luci-app-alist.git package/alist
+#git clone https://github.com/sbwml/luci-app-alist.git package/alist
 #git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
 #git clone https://github.com/sirpdboy/netspeedtest.git package/netspeedtest
 #git clone https://github.com/sirpdboy/luci-app-advanced.git package/luci-app-advanced
@@ -80,7 +83,7 @@ git clone https://github.com/0118Add/luci-app-unblockneteasemusic.git package/lu
 #sed -i 's/广告屏蔽大师 Plus+/广告屏蔽/g' feeds/luci/applications/luci-app-adbyby-plus/po/zh-cn/adbyby.po
 sed -i 's/解除网易云音乐播放限制/音乐解锁/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 #sed -i 's/Hello World/Hi World/g' package/luci-app-vssr/luasrc/controller/vssr.lua
-sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/helloworld/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
+sed -i 's/ShadowSocksR Plus+/SSR Plus+/g' package/luci-app-ssr-plus/luasrc/controller/shadowsocksr.lua
 #sed -i 's/Argon 主题设置/主题设置/g' feeds/luci/applications/luci-app-argon-config/po/zh-cn/argon-config.po
 sed -i 's/Frp 内网穿透/内网穿透/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
 #sed -i 's/Docker CE 容器/Docker 容器/g' feeds/luci/applications/luci-app-docker/po/zh-cn/docker.po
@@ -117,9 +120,9 @@ sed -i 's/vpn/services/g' ./feeds/luci/applications/luci-app-zerotier/luasrc/vie
 #sed -i 's/services/vpn/g' package/luci-app-bypass/luasrc/view/bypass/*.htm
 
 # 调整 SSRP 到 GFW 菜单
-sed -i 's/services/vpn/g' package/helloworld/luci-app-ssr-plus/luasrc/controller/*.lua
-sed -i 's/services/vpn/g' package/helloworld/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
-sed -i 's/services/vpn/g' package/helloworld/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
+sed -i 's/services/vpn/g' package/luci-app-ssr-plus/luasrc/controller/*.lua
+sed -i 's/services/vpn/g' package/luci-app-ssr-plus/luasrc/model/cbi/shadowsocksr/*.lua
+sed -i 's/services/vpn/g' package/luci-app-ssr-plus/luasrc/view/shadowsocksr/*.htm
 
 # 调整 Pass Wall 到 GFW 菜单
 sed -i 's/services/vpn/g' package/passwall/luci-app-passwall/luasrc/controller/*.lua
