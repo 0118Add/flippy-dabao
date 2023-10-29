@@ -59,9 +59,6 @@ svn co https://github.com/kiddin9/openwrt-packages/trunk/lua-maxminddb package/l
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
 git clone https://github.com/fw876/helloworld.git package/helloworld
-#svn co https://github.com/fw876/helloworld/trunk/redsocks2 package/redsocks2
-#svn co https://github.com/fw876/helloworld/trunk/shadow-tls package/shadow-tls
-#svn co https://github.com/fw876/helloworld/trunk/lua-neturl package/lua-neturl
 #svn co https://github.com/fw876/helloworld/trunk/luci-app-ssr-plus package/luci-app-ssr-plus
 #git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
 #git clone https://github.com/0118Add/luci-theme-neobird.git package/luci-theme-neobird
