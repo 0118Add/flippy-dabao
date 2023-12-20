@@ -22,8 +22,8 @@ env:
   UPLOAD_RELEASE: true
   RECENT_LASTEST: 3
   TZ: Asia/Shanghai
-  FILE_NAME: dabao_flippy
-  PRODUCT_NAME: dabao_flippy
+  FILE_NAME: dabao_flippy-immortalwrt
+  PRODUCT_NAME: dabao_flippy-immortalwrt
 
 jobs:
   build:
