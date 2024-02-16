@@ -314,6 +314,7 @@ CONFIG_PACKAGE_luci-app-openclash=y #OpenClash客户端
 # CONFIG_PACKAGE_luci-app-adguardhome is not set #ADguardhome
 # CONFIG_PACKAGE_luci-app-poweroff is not set #关机（增加关机功能）
 CONFIG_PACKAGE_luci-app-argon-config=y #argon主题设置
+CONFIG_PACKAGE_luci-app-design-config=y
 # CONFIG_PACKAGE_luci-theme-atmaterial_new is not set #atmaterial 三合一主题
 # CONFIG_PACKAGE_luci-theme-neobird is not set #Neobird 主题
 # CONFIG_PACKAGE_luci-app-autotimeset is not set #定时重启系统，网络
