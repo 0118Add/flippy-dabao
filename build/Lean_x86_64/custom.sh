@@ -27,8 +27,10 @@ git clone https://github.com/gngpp/luci-theme-design package/luci-theme-design
 
 # 删除部分默认包
 rm -rf feeds/luci/applications/luci-app-qbittorrent
+rm -rf feeds/luci/applications/luci-app-vlmcsd
 rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/luci/themes/luci-theme-design
+
 #rm -rf package/lean/autocore
 
 # 修改概览里时间显示为中文数字
@@ -330,7 +332,7 @@ EOF
 
 # Passwall插件:
 cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-passwall2=y
+# CONFIG_PACKAGE_luci-app-passwall2 is not set
 CONFIG_PACKAGE_luci-app-passwall=y
 CONFIG_PACKAGE_luci-app-passwall_Iptables_Transparent_Proxy=y
 # CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy is not set
@@ -374,7 +376,7 @@ cat >> .config <<EOF
 # CONFIG_PACKAGE_luci-app-ddns is not set #DDNS服务
 # CONFIG_PACKAGE_ddns-scripts_aliyun is not set
 # CONFIG_PACKAGE_ddns-scripts_dnspod is not set
-# CONFIG_DEFAULT_luci-app-vlmcsd is not set #KMS激活服务器
+# CONFIG_DEFAULT_luci-app-vlmcsd is not set
 CONFIG_PACKAGE_luci-app-filetransfer=y #系统-文件传输
 CONFIG_PACKAGE_luci-app-autoreboot=y #定时重启
 # CONFIG_PACKAGE_luci-app-upnp is not set #通用即插即用UPnP(端口自动转发)
@@ -401,6 +403,8 @@ CONFIG_PACKAGE_luci-app-diskman=y #磁盘管理磁盘信息
 # CONFIG_PACKAGE_luci-app-jd-dailybonus is not set #京东签到服务
 # CONFIG_PACKAGE_luci-app-uugamebooster is not set #UU游戏加速器
 # CONFIG_PACKAGE_luci-app-dockerman is not set #Docker管理
+CONFIG_PACKAGE_luci-app-ddns-go=y
+CONFIG_PACKAGE_luci-app-unblockneteasemusic=y
 CONFIG_PACKAGE_luci-app-partexp=y
 CONFIG_PACKAGE_luci-app-ttyd=y #ttyd
 CONFIG_PACKAGE_luci-app-wireguard=y #wireguard端
