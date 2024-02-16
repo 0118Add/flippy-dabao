@@ -16,6 +16,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
 git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash package/luci-app-openclash
 git clone https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
+git clone https://github.com/sirpdboy/luci-app-partexp package/luci-app-partexp
 git clone -b master https://github.com/0118Add/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/gngpp/luci-theme-design package/luci-theme-design
@@ -60,7 +61,7 @@ sed -i 's/一键分区扩容/分区扩容/g' package/luci-app-partexp/po/zh-cn/p
 #sed -i 's/msgstr "KMS 服务器"/msgstr "KMS激活"/g' feeds/luci/applications/luci-app-vlmcsd/po/zh-cn/vlmcsd.po
 #sed -i 's/msgstr "UPnP"/msgstr "UPnP设置"/g' feeds/luci/applications/luci-app-upnp/po/zh-cn/upnp.po
 #sed -i 's/Frp 内网穿透/内网穿透/g' feeds/luci/applications/luci-app-frpc/po/zh-cn/frp.po
-sed -i 's/Frpc内网穿透/内网穿透/g' package/luci-app-multi-frpc/po/zh-cn/frp.po
+#sed -i 's/Frpc内网穿透/内网穿透/g' package/luci-app-multi-frpc/po/zh-cn/frp.po
 sed -i 's/解除网易云音乐播放限制/音乐解锁/g' package/luci-app-unblockneteasemusic/luasrc/controller/unblockneteasemusic.lua
 #sed -i 's/"阿里云盘 WebDAV"/"阿里云盘"/g' package/aliyundrive-webdav/openwrt/luci-app-aliyundrive-webdav/po/zh-cn/aliyundrive-webdav.po
 #sed -i 's/V2ray 服务器/V2ray服务/g' feeds/luci/applications/luci-app-v2ray-server/po/zh-cn/v2ray_server.po
@@ -397,8 +398,16 @@ CONFIG_PACKAGE_luci-app-diskman=y #磁盘管理磁盘信息
 # CONFIG_PACKAGE_luci-app-jd-dailybonus=n #京东签到服务
 # CONFIG_PACKAGE_luci-app-uugamebooster=n #UU游戏加速器
 # CONFIG_PACKAGE_luci-app-dockerman=n #Docker管理
+CONFIG_PACKAGE_luci-app-partexp=y
 CONFIG_PACKAGE_luci-app-ttyd=y #ttyd
 CONFIG_PACKAGE_luci-app-wireguard=y #wireguard端
+CONFIG_PACKAGE_luci-app-vssr=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Trojan=y
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Kcptun is not set
+# CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Xray_plugin is not set
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_ShadowsocksR_Libev_Server=y
+CONFIG_PACKAGE_luci-app-vssr_INCLUDE_Hysteria=y
 #
 # VPN相关插件(禁用):
 #
