@@ -398,6 +398,7 @@ CONFIG_PACKAGE_luci-app-diskman=y #磁盘管理磁盘信息
 # CONFIG_PACKAGE_luci-app-jd-dailybonus=n #京东签到服务
 # CONFIG_PACKAGE_luci-app-uugamebooster=n #UU游戏加速器
 # CONFIG_PACKAGE_luci-app-dockerman=n #Docker管理
+CONFIG_PACKAGE_luci-app-partexp=y
 CONFIG_PACKAGE_luci-app-ttyd=y #ttyd
 CONFIG_PACKAGE_luci-app-wireguard=y #wireguard端
 CONFIG_PACKAGE_luci-app-vssr=y
