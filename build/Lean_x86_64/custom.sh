@@ -445,9 +445,9 @@ cat >> .config <<EOF
 CONFIG_PACKAGE_curl=y
 CONFIG_PACKAGE_htop=y
 CONFIG_PACKAGE_nano=y
-# CONFIG_PACKAGE_screen=y
-# CONFIG_PACKAGE_tree=y
-# CONFIG_PACKAGE_vim-fuller=y
+CONFIG_PACKAGE_screen=y
+CONFIG_PACKAGE_tree=y
+CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
 CONFIG_PACKAGE_bash=y
 CONFIG_PACKAGE_kmod-tun=y
@@ -456,9 +456,14 @@ CONFIG_PACKAGE_libcap=y
 CONFIG_PACKAGE_libcap-bin=y
 CONFIG_PACKAGE_ip6tables-mod-nat=y
 CONFIG_PACKAGE_iptables-mod-extra=y
-CONFIG_PACKAGE_vsftpd=y
+# CONFIG_PACKAGE_vsftpd is not set
 CONFIG_PACKAGE_openssh-sftp-server=y
 CONFIG_PACKAGE_qemu-ga=y
+CONFIG_PACKAGE_kmod-tcp-bbr=y
+CONFIG_PACKAGE_kmod-ipt-offload=y
+CONFIG_PACKAGE_kmod-fast-classifier=y
+CONFIG_PACKAGE_kmod-shortcut-fe-cm=y
+CONFIG_PACKAGE_kmod-shortcut-fe-drv=y
 EOF
 
 # 其他软件包:
