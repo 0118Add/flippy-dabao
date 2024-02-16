@@ -16,7 +16,7 @@ cp -rf /rom/etc/openclash/core/* /etc/openclash/core
 # uci commit system
 
 # 设置默认主题
-uci set luci.main.mediaurlbase='/luci-static/neobird' && uci commit luci
+# uci set luci.main.mediaurlbase='/luci-static/neobird' && uci commit luci
 
 # 修改主机名称为OpenWrt-86
 # uci set system.@system[0].hostname='OpenWrt-86'
@@ -26,10 +26,10 @@ uci set luci.main.mediaurlbase='/luci-static/neobird' && uci commit luci
 # uci commit luci
 
 # 去掉CpuMark跑数，直接显示分数
-sed -i '/coremark.sh/d' /etc/crontabs/root
-cat /dev/null > /etc/bench.log
-echo " (CpuMark : 191219.823122" >> /etc/bench.log
-echo " Scores)" >> /etc/bench.log
+# sed -i '/coremark.sh/d' /etc/crontabs/root
+# cat /dev/null > /etc/bench.log
+# echo " (CpuMark : 191219.823122" >> /etc/bench.log
+# echo " Scores)" >> /etc/bench.log
 
 # 添加系统信息
 grep "shell-motd" /etc/profile >/dev/null
