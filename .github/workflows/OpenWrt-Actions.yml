@@ -26,8 +26,8 @@ on:
         type: boolean
 
 # 定时触发编译(1,2,5,6,8,10,12,15,16,18,20,22,25,26,28,30早3点)
-  schedule:
-    - cron: 0 17 1,4,5,7,9,11,14,15,17,19,21,24,25,27,29,31 * *
+  #schedule:
+    #- cron: 0 17 1,4,5,7,9,11,14,15,17,19,21,24,25,27,29,31 * *
 
 # 点赞☆Star触发编译
 #  watch:
@@ -41,7 +41,7 @@ env:
   WECHAT_WORK_TOKEN: ${{ secrets.WECHAT_WORK_TOKEN }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
   TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  GITHUB_RELEASE: https://github.com/db-one/OpenWrt-AutoBuild/releases
+  GITHUB_RELEASE: https://github.com/0118Add/flippy-dabao/releases
 
 jobs: 
   build:
