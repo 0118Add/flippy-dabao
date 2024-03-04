@@ -61,7 +61,7 @@ git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
 #git clone https://github.com/sbwml/luci-app-alist.git package/alist
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
 #git clone https://github.com/messense/aliyundrive-webdav.git package/aliyundrive-webdav
-svn co https://github.com/vernesong/OpenClash/branches/dev/luci-app-openclash package/luci-app-openclash
+git clone -b dev --depth 1 https://github.com/vernesong/OpenClash package/luci-app-openclash
 
 
 # 修改插件名字
