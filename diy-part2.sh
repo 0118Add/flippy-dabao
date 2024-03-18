@@ -90,6 +90,7 @@ git clone https://github.com/jerrykuku/lua-maxminddb package/lua-maxminddb
 #svn co https://github.com/0118Add/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
+merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/sing-box
 git clone https://github.com/sbwml/luci-app-daed-next package/luci-app-daed-next
 git clone https://github.com/fw876/helloworld package/helloworld
 #git clone https://github.com/xiaorouji/openwrt-passwall2 package/passwall2
