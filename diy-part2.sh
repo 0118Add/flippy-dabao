@@ -44,7 +44,7 @@ sed -i 's/192.168.1.1/10.0.0.10/g' package/base-files/files/bin/config_generate
 #sed -i 's/KERNEL_PATCHVER:=5.10/KERNEL_PATCHVER:=5.15/g' target/linux/armvirt/Makefile
 
 # 修改系统文件
-#curl -fsSL https://raw.githubusercontent.com/0118Add/patch/main/flippyn1_index.htm > ./package/lean/autocore/files/arm/index.htm
+curl -fsSL https://raw.githubusercontent.com/0118Add/flippy-dabao/main/flippyn1_index.htm > ./package/lean/autocore/files/arm/index.htm
 #curl -fsSL https://raw.githubusercontent.com/0118Add/s9xxx-actions/main/netsupport.mk > ./package/kernel/linux/modules/netsupport.mk
 
 # 替换文件
@@ -74,8 +74,8 @@ rm -rf feeds/packages/lang/node
 git clone https://github.com/8688Add/feeds_packages_lang_node feeds/packages/lang/node
 
 # 添加额外软件包
-rm -rf package/lean/autocore
-git clone https://github.com/0118Add/OpenWrt package/myautocore
+#rm -rf package/lean/autocore
+#git clone https://github.com/0118Add/OpenWrt package/myautocore
 rm -rf feeds/luci/collections/luci-lib-docker
 rm -rf feeds/luci/applications/luci-app-dockerman
 rm -rf feeds/packages/net/mosdns
