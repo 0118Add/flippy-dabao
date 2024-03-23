@@ -85,9 +85,7 @@ rm -rf feeds/luci/applications/luci-app-serverchan
 merge_package https://github.com/kiddin9/openwrt-packages openwrt-packages/dae
 git clone https://github.com/lisaac/luci-lib-docker.git package/luci-lib-docker
 git clone https://github.com/lisaac/luci-app-dockerman.git package/luci-app-dockerman
-#svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-netdata package/luci-app-netdata
 git clone https://github.com/jerrykuku/lua-maxminddb package/lua-maxminddb
-#svn co https://github.com/0118Add/openwrt-packages/trunk/luci-app-bypass package/luci-app-bypass
 #git clone https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
 merge_package https://github.com/xiaorouji/openwrt-passwall-packages openwrt-passwall-packages/sing-box
@@ -111,7 +109,7 @@ git clone https://github.com/0118Add/luci-app-vssr package/luci-app-vssr
 git clone -b dev --depth 1 https://github.com/vernesong/OpenClash package/luci-app-openclash
 git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush package/luci-app-wechatpush
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
-#svn co https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom/trunk/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
+#git clone https://github.com/xiaoqingfengATGH/luci-theme-infinityfreedom package/luci-theme-infinityfreedom
 git clone -b master https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic.git package/luci-app-unblockneteasemusic
 
 # 修改插件名字（修改名字后不知道会不会对插件功能有影响，自己多测试）
