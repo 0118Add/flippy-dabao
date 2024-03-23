@@ -59,12 +59,14 @@
 		local cpu_stat = luci.sys.exec("/usr/bin/cpustat") or { }
 		local eth_info = luci.sys.exec("/usr/bin/cpustat -e")
 		local eth_cnt  = luci.sys.exec("/usr/bin/cpustat -ec")
-
-		local rv = {
+                local run_time = luci.sys.exec("awk '{print int($1/86400)\"天 \"int($1%86400/3600)\"时 \"int($1%86400%3600/60)\"分 \"int($1%60)\"秒\"}' /proc/uptime")
+		
+	        local rv = {
 			cpuusage    = cpu_usage,
 			userinfo    = user_info,
-			uptime     = sysinfo.uptime or 0,
-			localtime  = os.date("%Y年%m月%d日") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X"),
+			runtime    = run_time,
+	                uptime     = sysinfo.uptime or 0,
+			localtime  = os.date("%Y-%m-%d") .. " " .. translate(os.date("%A")) .. " " .. os.date("%X"),
 			loadavg    = sysinfo.load or { 0, 0, 0 },
 			memory     = meminfo,
 			memcached  = mem_cached,
@@ -722,8 +724,11 @@
 
 			if (e = document.getElementById('uptime'))
 				e.innerHTML = String.format('%t', info.uptime);
-				
-			if (e = document.getElementById('userinfo'))
+			
+	                if (e = document.getElementById('runtime'))
+				e.innerHTML = info.runtime;
+			
+	                if (e = document.getElementById('userinfo'))
 				e.innerHTML = info.userinfo;
 				
 			if (e = document.getElementById('cpuusage'))
@@ -778,11 +783,12 @@
 		<tr><td width="33%"><%:Model%></td><td><%=pcdata(boardinfo.model or "?")%> <%=luci.sys.exec("cat /etc/bench.log") or " "%></td></tr>
 		<tr><td width="33%"><%:Architecture%></td><td><%=luci.sys.exec("/usr/bin/cpustat -a")%></td></tr>  
 		<tr><td width="33%"><%:Firmware Version%></td><td>
-			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%>
+			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%> /
+			<%=pcdata(ver.luciname)%> (<%=pcdata(ver.luciversion)%>)	
 		</td></tr>
 		<tr><td width="33%"><%:Kernel Version%></td><td><%=unameinfo.release or "?"%></td></tr>
 		<tr><td width="33%"><%:Local Time%></td><td id="localtime">-</td></tr>
-		<tr><td width="33%"><%:Uptime%></td><td id="uptime">-</td></tr>
+		<tr><td width="33%"><%:Uptime%></td><td id="runtime">-</td></tr>
 		<tr><td width="33%"><%:CPU状态%></td><td id="cpustat">-</td></tr>
 		<tr><td width="33%"><%:Load Average%></td><td id="loadavg">-</td></tr>
 		<tr><td width="33%"><%:CPU usage (%)%></td><td id="cpuusage">-</td></tr>
