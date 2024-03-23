@@ -68,7 +68,7 @@ jobs:
         OPENWRT_ARMVIRT: https://github.com/0118Add/flippy-dabao/releases/download/ARMv8/openwrt-armvirt-64-generic-rootfs.tar.gz
         PACKAGE_SOC: vplus_s905x3_s905d_s922x
         WHOAMI: BGG
-        OPENWRT_VER: "R24.2.2"
+        #OPENWRT_VER: "R24.2.2"
         #BUILD: $(date '+%Y-%m-%d')
         DISTRIB_REVISION: "${OPENWRT_VER} (${BUILD} by ${WHOAMI})"
         DISTRIB_DESCRIPTION: ""
