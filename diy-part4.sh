@@ -49,7 +49,7 @@ rm -rf feeds/luci/applications/luci-app-openclash
 #rm -rf feeds/luci/applications/luci-app-unblockneteasemusic
 #git clone https://github.com/jerrykuku/luci-app-vssr.git package/luci-app-vssr
 #git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
-git clone https://github.com/sbwml/luci-app-daed-next package/luci-app-daed-next
+#git clone https://github.com/sbwml/luci-app-daed-next package/luci-app-daed-next
 git clone https://github.com/xiaorouji/openwrt-passwall package/passwall
 #git clone https://github.com/sbwml/luci-app-alist.git package/alist
 git clone https://github.com/ophub/luci-app-amlogic.git package/amlogic
