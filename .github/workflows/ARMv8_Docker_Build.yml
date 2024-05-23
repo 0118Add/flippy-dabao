@@ -73,15 +73,15 @@ jobs:
     - name: Build and push docker image
       id: push
       run: |
-        sudo wget  https://github.com/0118Add/flippy-dabao/releases/download/ARMv8_immortalwrt/openwrt-armvirt-64-default-rootfs.tar.gz
-        cp ./openwrt-armvirt-64-default-rootfs.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-default-rootfs.tar.gz
+        sudo wget  https://github.com/0118Add/flippy-dabao/releases/download/ARMv8_immortalwrt/immortalwrt-armsr-armv8-generic-rootfs.tar.gz
+        cp ./immortalwrt-armsr-armv8-generic-rootfs.tar.gz $GITHUB_WORKSPACE/docker/immortalwrt-armsr-armv8-generic-rootfs.tar.gz
         cd $GITHUB_WORKSPACE/docker
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-        docker tag 0118Add/openwrt-aarch64 0118Add/openwrt-aarch64:R${{ env.DATE_YMD }}
-        docker push 0118Add/openwrt-aarch64
+        docker tag 0118add/openwrt-aarch64 0118add/openwrt-aarch64:R${{ env.DATE_YMD }}
+        docker push 0118add/openwrt-aarch64
         echo "status=success" >>$GITHUB_OUTPUT
 
     - name: Delete workflow runs
