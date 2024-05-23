@@ -163,7 +163,7 @@ jobs:
         cp AllPackages.tar.gz $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         cd $GITHUB_WORKSPACE/openwrt/bin/targets/*/*
         rm -rf packages immortalwrt-armvirt-64-default.manifest immortalwrt-armvirt-64-Image immortalwrt-armvirt-64-Image-initramfs immortalwrt-armvirt-64-rootfs-ext4.img.gz immortalwrt-armvirt-64-rootfs-squashfs.img.gz immortalwrt-armvirt-64-rootfs.cpio.gz config.buildinfo feeds.buildinfo sha256sums version.buildinfo immortalwrt-armvirt-64-root.ext4.gz immortalwrt-armvirt-64-root.squashfs.gz immortalwrt-armsr-armv8-generic-kernel.bin immortalwrt-armsr-armv8-generic.manifest
-        #mv immortalwrt-armsr-armv8-generic-rootfs.tar.gz openwrt-armvirt-64-default-rootfs.tar.gz
+        mv immortalwrt-armsr-armv8-generic-rootfs.tar.gz openwrt-armvirt-64-default-rootfs.tar.gz
         echo "FIRMWARE=$PWD" >> $GITHUB_ENV
         echo "status=success" >>$GITHUB_OUTPUT
     
