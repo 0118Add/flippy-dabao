@@ -27,9 +27,6 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
 
     steps:
-    #- name: WeChat notification
-    #  run: curl https://sc.ftqq.com/${{ secrets.ServerChan }}.send?text=${{ env.FILE_NAME }}开始编译
-      
     - name: Checkout
       uses: actions/checkout@master
 
@@ -76,15 +73,15 @@ jobs:
     - name: Build and push docker image
       id: push
       run: |
-        sudo wget https://github.com/0118Add/Armv8-Actions-DB/releases/download/Files4Build/Docker-openwrt-armvirt-64-generic-rootfs.tar.gz
-        cp ./Docker-openwrt-armvirt-64-generic-rootfs.tar.gz $GITHUB_WORKSPACE/docker/openwrt-armvirt-64-generic-rootfs.tar.gz
+        sudo wget https://github.com/0118Add/flippy-dabao/releases/download/ARMv8_immortalwrt/immortalwrt-armsr-armv8-generic-rootfs.tar.gz
+        cp ./immortalwrt-armsr-armv8-generic-rootfs.tar.gz $GITHUB_WORKSPACE/docker/immortalwrt-armsr-armv8-generic-rootfs.tar.gz
         cd $GITHUB_WORKSPACE/docker
         chmod +x $DOCKER_BUILD_SH
         ./$DOCKER_BUILD_SH
         gzip -dc dockerimgs/docker/*.gz | docker load
         docker login --username=${{ secrets.DOCKER_USERNAME }} --password=${{ secrets.DOCKER_PASSWORD }}
-        docker tag 8688add/openwrt-aarch64 8688add/openwrt-aarch64:R${{ env.DATE_YMD }}
-        docker push 8688add/openwrt-aarch64
+        docker tag 0118Add/openwrt-aarch64 0118Add/openwrt-aarch64:R${{ env.DATE_YMD }}
+        docker push 0118Add/openwrt-aarch64
         echo "status=success" >>$GITHUB_OUTPUT
 
     - name: Delete workflow runs
