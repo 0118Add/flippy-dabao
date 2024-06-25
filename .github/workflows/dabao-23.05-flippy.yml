@@ -1,4 +1,4 @@
-name: dabao 23.05 flippy
+name: dabao-23.05-flippy
 
 on:
   repository_dispatch:
