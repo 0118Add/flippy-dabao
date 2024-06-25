@@ -30,7 +30,7 @@ git clone --depth=1 -b dev https://github.com/vernesong/OpenClash package/new/Op
 git clone https://$github/sbwml/autocore-arm -b openwrt-23.05 package/new/autocore
 
 # ddns-go
-git clone https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
+#git clone https://github.com/sirpdboy/luci-app-ddns-go package/luci-app-ddns-go
 
 # netkit-ftp
 git clone https://$github/sbwml/package_new_ftp package/new/ftp
@@ -43,26 +43,14 @@ rm -rf feeds/packages/net/{xray-core,v2ray-core,v2ray-geodata,sing-box}
 git clone https://$github/sbwml/openwrt_helloworld package/new/helloworld -b v5
 
 # DAED
-#git clone https://$github/sbwml/luci-app-daed package/new/daed
-git clone https://github.com/QiuSimons/luci-app-daed-next package/new/daed-next
+#git clone -b master --depth 1 https://github.com/QiuSimons/luci-app-daed package/new/daed
+#git clone https://$github/QiuSimons/luci-app-daed-next package/new/daed-next
 
 # immortalwrt homeproxy
-git clone https://$github/immortalwrt/homeproxy package/new/homeproxy
-sed -i "s/ImmortalWrt/OpenWrt/g" package/new/homeproxy/po/zh_Hans/homeproxy.po
-sed -i "s/ImmortalWrt proxy/OpenWrt proxy/g" package/new/homeproxy/htdocs/luci-static/resources/view/homeproxy/{client.js,server.js}
-
-# mihomo
-#git clone https://$github/pmkol/openwrt-mihomo package/new/openwrt-mihomo
-#mkdir -p package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui
-#curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/Country.mmdb https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
-#curl -Lso metacubexd-gh-pages.tar.gz https://$github/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.tar.gz
-#tar zxf metacubexd-gh-pages.tar.gz
-#mv metacubexd-gh-pages package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui/metacubexd
-
-# bump geodata version
-#rm -rf package/new/helloworld/v2ray-geodata
-#git clone https://$github/sbwml/v2ray-geodata package/new/helloworld/v2ray-geodata
-#sed -i 's#Loyalsoldier/geoip/releases/latest/download/geoip-only-cn-private.dat#MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat#g; s#Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat#MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat#g' package/new/helloworld/v2ray-geodata/Makefile
+git clone https://github.com/muink/luci-app-homeproxy package/new/homeproxy
+#git clone https://$github/immortalwrt/homeproxy package/new/homeproxy
+#sed -i "s/ImmortalWrt/OpenWrt/g" package/new/homeproxy/po/zh_Hans/homeproxy.po
+#sed -i "s/ImmortalWrt proxy/OpenWrt proxy/g" package/new/homeproxy/htdocs/luci-static/resources/view/homeproxy/{client.js,server.js}
 
 # alist
 #git clone https://$github/sbwml/openwrt-alist package/new/alist
@@ -87,7 +75,8 @@ sed -i "s/D_GNU_SOURCE/D_GNU_SOURCE -funroll-loops/g" feeds/packages/net/iperf3/
 
 # custom packages
 rm -rf feeds/packages/utils/coremark
-git clone https://github.com/8688Add/openwrt_pkgs package/new/custom --depth=1
+rm -rf feeds/packages/net/zerotier
+git clone https://$github/8688Add/openwrt_pkgs package/new/custom --depth=1
 # coremark - prebuilt with gcc15
 if [ "$platform" = "rk3568" ]; then
     curl -s https://$mirror/openwrt/patch/coremark/coremark.aarch64-4-threads > package/new/custom/coremark/src/musl/coremark.aarch64
@@ -101,14 +90,6 @@ fi
 sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
 sed -i 's/<%:Down%>/<%:Move down%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
 
-# SQM Translation
-mkdir -p feeds/packages/net/sqm-scripts/patches
-curl -s https://$mirror/openwrt/patch/sqm/001-help-translation.patch > feeds/packages/net/sqm-scripts/patches/001-help-translation.patch
-
-# mjpg-streamer init
-sed -i "s,option port '8080',option port '1024',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
-sed -i "s,option fps '5',option fps '25',g" feeds/packages/multimedia/mjpg-streamer/files/mjpg-streamer.config
-
 # unzip
 rm -rf feeds/packages/utils/unzip
 git clone https://$github/sbwml/feeds_packages_utils_unzip feeds/packages/utils/unzip
@@ -116,25 +97,46 @@ git clone https://$github/sbwml/feeds_packages_utils_unzip feeds/packages/utils/
 # tcp-brutal
 git clone https://$github/sbwml/package_kernel_tcp-brutal package/kernel/tcp-brutal
 
-# 修改系统文件
-sed -i 's/WireGuard/WiGd状态/g' feeds/luci/protocols/luci-proto-wireguard/root/usr/share/luci/menu.d/luci-proto-wireguard.json
-
-# 更改固件版本信息
-sed -i "s|DISTRIB_DESCRIPTION='.*'|DISTRIB_DESCRIPTION='OpenWrt %V'|g" package/base-files/files/etc/openwrt_release
-
 # 克隆immortalwrt-luci仓库
 git clone --depth=1 -b openwrt-23.05 https://github.com/immortalwrt/luci.git immortalwrt-luci
-cp -rf immortalwrt-luci/applications/luci-app-alist feeds/luci/applications/luci-app-alist
-ln -sf ../../../feeds/luci/applications/luci-app-alist ./package/feeds/luci/luci-app-alist
-cp -rf immortalwrt-luci/applications/luci-app-wechatpush feeds/luci/applications/luci-app-wechatpush
-ln -sf ../../../feeds/luci/applications/luci-app-wechatpush ./package/feeds/luci/luci-app-wechatpush
-#cp -rf immortalwrt-luci/applications/luci-app-ddns-go feeds/luci/applications/luci-app-ddns-go
-#ln -sf ../../../feeds/luci/applications/luci-app-ddns-go ./package/feeds/luci/luci-app-ddns-go
+#cp -rf immortalwrt-luci/applications/luci-app-alist feeds/luci/applications/luci-app-alist
+#ln -sf ../../../feeds/luci/applications/luci-app-alist ./package/feeds/luci/luci-app-alist
+cp -rf immortalwrt-luci/applications/luci-app-daed feeds/luci/applications/luci-app-daed
+ln -sf ../../../feeds/luci/applications/luci-app-daed ./package/feeds/luci/luci-app-daed
+cp -rf immortalwrt-luci/applications/luci-app-ddns-go feeds/luci/applications/luci-app-ddns-go
+ln -sf ../../../feeds/luci/applications/luci-app-ddns-go ./package/feeds/luci/luci-app-ddns-go
 # 克隆immortalwrt-packages仓库
 git clone --depth=1 -b openwrt-23.05 https://github.com/immortalwrt/packages.git immortalwrt-packages
-cp -rf immortalwrt-packages/net/alist feeds/packages/net/alist
-ln -sf ../../../feeds/packages/net/alist ./package/feeds/packages/alist
-#cp -rf immortalwrt-packages/net/ddns-go feeds/packages/net/ddns-go
-#ln -sf ../../../feeds/packages/net/ddns-go ./package/feeds/packages/ddns-go
+#cp -rf immortalwrt-packages/net/alist feeds/packages/net/alist
+#ln -sf ../../../feeds/packages/net/alist ./package/feeds/packages/alist
+cp -rf immortalwrt-packages/net/ddns-go feeds/packages/net/ddns-go
+ln -sf ../../../feeds/packages/net/ddns-go ./package/feeds/packages/ddns-go
 cp -rf immortalwrt-packages/net/dae feeds/packages/net/dae
 ln -sf ../../../feeds/packages/net/dae ./package/feeds/packages/dae
+cp -rf immortalwrt-packages/net/daed feeds/packages/net/daed
+ln -sf ../../../feeds/packages/net/daed ./package/feeds/packages/daed
+cp -rf immortalwrt-packages/net/zerotier feeds/packages/net/zerotier
+ln -sf ../../../feeds/packages/net/zerotier ./package/feeds/packages/zerotier
+cp -rf immortalwrt-packages/libs/libcron feeds/packages/libs/libcron
+ln -sf ../../../feeds/packages/libs/libcron ./package/feeds/packages/libcron
+
+# 修改权限
+chmod 0755 feeds/packages/net/zerotier/files/etc/init.d/zerotier
+
+# configure default-settings
+sed -i 's/mirrors.pku.edu.cn/mirrors.cernet.edu.cn/g' package/new/default-settings/default/zzz-default-settings
+sed -i '/# opkg mirror/a case $(uname -m) in\n    x86_64)\n        echo -e '\''src/gz immortalwrt_luci https://mirrors.cernet.edu.cn/openwrt/releases/packages-23.05/x86_64/luci\nsrc/gz immortalwrt_packages https://mirrors.cernet.edu.cn/openwrt/releases/packages-23.05/x86_64/packages'\'' >> /etc/opkg/distfeeds.conf\n        ;;\n    aarch64)\n        echo -e '\''src/gz immortalwrt_luci https://mirrors.cernet.edu.cn/openwrt/releases/packages-23.05/aarch64_generic/luci\nsrc/gz immortalwrt_packages https://mirrors.cernet.edu.cn/openwrt/releases/packages-23.05/aarch64_generic/packages'\'' >> /etc/opkg/distfeeds.conf\n        ;;\n    *)\n        echo "Warning: This system architecture is not supported."\n        ;;\nesac' package/new/default-settings/default/zzz-default-settings
+sed -i '/# opkg mirror/a echo -e '\''untrusted comment: Public usign key for 23.05 release builds\\nRWRoKXAGS4epF5gGGh7tVQxiJIuZWQ0geStqgCkwRyviQCWXpufBggaP'\'' > /etc/opkg/keys/682970064b87a917' package/new/default-settings/default/zzz-default-settings
+# comment out the following line to restore the full description
+sed -i '/# timezone/i grep -q '\''/tmp/sysinfo/model'\'' /etc/rc.local || sudo sed -i '\''/exit 0/i [ "$(cat /sys\\/class\\/dmi\\/id\\/sys_vendor 2>\\/dev\\/null)" = "Default string" ] \&\& echo "x86_64" > \\/tmp\\/sysinfo\\/model'\'' /etc/rc.local\n' package/new/default-settings/default/zzz-default-settings
+sed -i '/# timezone/i sed -i "s/\\(DISTRIB_DESCRIPTION=\\).*/\\1'\''OpenWrt $(sed -n "s/DISTRIB_DESCRIPTION='\''OpenWrt \\([^ ]*\\) .*/\\1/p" /etc/openwrt_release)'\'',/" /etc/openwrt_release\nsource /etc/openwrt_release \&\& sed -i -e "s/distversion\\s=\\s\\".*\\"/distversion = \\"$DISTRIB_ID $DISTRIB_RELEASE ($DISTRIB_REVISION)\\"/g" -e '\''s/distname    = .*$/distname    = ""/g'\'' /usr/lib/lua/luci/version.lua\nsed -i "s/luciname    = \\".*\\"/luciname    = \\"LuCI openwrt-23.05\\"/g" /usr/lib/lua/luci/version.lua\nsed -i "s/luciversion = \\".*\\"/luciversion = \\"v'$(date +%Y%m%d)'\\"/g" /usr/lib/lua/luci/version.lua\necho "export const revision = '\''v'$(date +%Y%m%d)'\'\'', branch = '\''LuCI openwrt-23.05'\'';" > /usr/share/ucode/luci/version.uc\n/etc/init.d/rpcd restart\n' package/new/default-settings/default/zzz-default-settings
+
+# mihomo
+git clone https://$github/morytyann/OpenWrt-mihomo  package/new/openwrt-mihomo
+mkdir -p package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui
+curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/Country.mmdb https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/country-lite.mmdb
+curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/GeoIP.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geoip-lite.dat
+curl -Lso package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/GeoSite.dat https://$github/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+curl -Lso metacubexd-gh-pages.tar.gz https://$github/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.tar.gz
+tar zxf metacubexd-gh-pages.tar.gz
+mv metacubexd-gh-pages package/new/openwrt-mihomo/luci-app-mihomo/root/etc/mihomo/run/ui/metacubexd
