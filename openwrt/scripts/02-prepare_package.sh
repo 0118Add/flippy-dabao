@@ -12,9 +12,9 @@ git clone https://$github/sbwml/feeds_packages_lang_node-prebuilt feeds/packages
 git clone https://$github/sbwml/default-settings package/new/default-settings
 
 # boost - 1.85.0
-rm -rf feeds/packages/libs/boost
+#rm -rf feeds/packages/libs/boost
 #cp -a ../master/packages/libs/boost feeds/packages/libs/boost
-cp -rf $GITHUB_WORKSPACE/openwrt/generic/boost feeds/packages/libs/boost
+#cp -rf $GITHUB_WORKSPACE/openwrt/generic/boost feeds/packages/libs/boost
 
 # lrzsz - 0.12.20
 rm -rf feeds/packages/utils/lrzsz
